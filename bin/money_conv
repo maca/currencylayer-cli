@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'money_conv'
+require 'money_conv/cli'
+
+MoneyConv::Cli.start(ARGV.dup.unshift("convert"))
