@@ -1,36 +1,32 @@
-# MoneyConv
+# Currency Layer API CLI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/money_conv`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Instalation
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'money_conv'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install money_conv
+$ git clone https://github.com/maca/money_conv.git
+$ cd money_conv
+$ gem build money_conv.gemspec
+$ gem install money_conv-0.1.0.gem
 
 ## Usage
 
-TODO: Write usage instructions here
+Examples:
 
-## Development
+  `$ money\_conv 10 euro mxn -t <your currency layer token>`
+  `$ money\_conv 10 euros to mxn pesos -t <your currency layer token>`
+  `$ money\_conv 10 euros to quetzal -t <your currency layer token>`
+  `$ money\_conv 10 British pound to mxn peso -t <your currency layer token>`
+  `$ money\_conv '10 euros to lebanese pounds' -t <your currency layer token>`
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+If the input is unambigous the convertion will be printed to stdout
+otherwise the possible matches will be printed to stderr and the program will
+exit with a non zero exit code
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Options:
+  -t --access_key
+     For the time being a currency layer
+     <https://currencylayer.com/> token has to be provided
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/money_conv.
+Todo:
+  - Read access key from ENV variable or ~/config-file
+  - Stemming for better matching plural currency names
 

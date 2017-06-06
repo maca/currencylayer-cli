@@ -2,7 +2,6 @@ require 'thor'
 
 module MoneyConv
   class Cli < Thor
-
     desc "1 euro mxn", "Convert currency"
 
     long_desc <<-DESC
