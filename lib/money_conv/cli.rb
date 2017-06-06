@@ -12,7 +12,7 @@ module MoneyConv
       exit with a non zero exit code
 
       Examples:
-        money_conv 10 euro mxn -t <your currency layer token>
+        money_conv 10 usd mxn -t <your currency layer token>
         money_conv 10 euros to mxn pesos -t <your currency layer token>
         money_conv 10 euros to quetzal -t <your currency layer token>
         money_conv 10 British pound to mxn peso -t <your currency layer token>
